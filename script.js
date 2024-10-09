@@ -33,7 +33,10 @@ function saveAndReset() {
         isRunning = false;
     
         // Setze einen Cookie mit dynamischem Namen (basierend auf aktueller Zeit)
-        const cookieName = `${getDateString()} || ${taskTitle}`;
+        var cookieLenght = document.cookie.split("; ").length + 1;
+
+        const cookieName = `${cookieLenght}: ${taskTitle}`;
+        //alert(cookieLenght)
         document.cookie = `${cookieName}=${timerValue}; path=/;`;
         //alert("Cookie gesetzt: " + cookieName + "=" + timerValue);
     
