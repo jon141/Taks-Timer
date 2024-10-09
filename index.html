@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" name="taskTitle" id="taskTitle" placeholder="Aufgabentitel">
+    <div id="timer">00:00:00</div>
+    <button class="stopStart" onclick="startTimer()">Start</button>
+    <button class="stopStart" onclick="stopTimer()">Stop</button> <br>
+    <button onclick="saveAndReset()">Speichern</button>
+    <button onclick="showCookies()">Cookies anzeigen</button> <br>
+    <button class="delCookies" onclick="clearCookies()">Cookies löschen</button> <!-- Button zum Löschen -->
+
+     <!--<div id="textElement"></div>-->
+    <div id="cookieDisplay"></div> <!-- Hier werden die Cookies angezeigt -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
