@@ -35,7 +35,7 @@ function saveAndReset() {
         // Setze einen Cookie mit dynamischem Namen (basierend auf aktueller Zeit)
         const cookieName = `${getDateString()} || ${taskTitle}`;
         document.cookie = `${cookieName}=${timerValue}; path=/;`;
-        alert("Cookie gesetzt: " + cookieName + "=" + timerValue);
+        //alert("Cookie gesetzt: " + cookieName + "=" + timerValue);
     
         // Timer-Text zurücksetzen
         document.getElementById("timer").textContent = "00:00:00";
@@ -100,14 +100,22 @@ function getDateString() {
 
 
 function clearCookies() {
-    const cookies = document.cookie.split("; ");
+    const taskTitle = document.getElementById("taskTitle").value;
 
-    // Setze für jeden Cookie ein Ablaufdatum in der Vergangenheit, um ihn zu löschen
-    cookies.forEach(cookie => {
-        const cookieName = cookie.split("=")[0];
-        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    });
+    if (taskTitle == "_&_") {
+        const cookies = document.cookie.split("; ");
+        document.getElementById("taskTitle").value = "";
 
-    // Aktualisiere die Cookie-Anzeige
-    showCookies();
+
+        // Setze für jeden Cookie ein Ablaufdatum in der Vergangenheit, um ihn zu löschen
+        cookies.forEach(cookie => {
+            const cookieName = cookie.split("=")[0];
+            document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        });
+    
+        // Aktualisiere die Cookie-Anzeige
+        showCookies();
+    }
+
+
 }
