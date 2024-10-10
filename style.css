@@ -33,6 +33,8 @@ button {
 ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
+
 }
 
 li {
@@ -55,4 +57,9 @@ li {
 
 .delCookies {
     width: 375px;
+}
+.cookieDisplay {
+    width: 100%;
+    display: inline;
+    
 }
